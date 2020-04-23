@@ -6,8 +6,8 @@ const axios = require('axios');
 router.get('/', (req, res, next) => {
   axios.get('https://swapi.py4e.com/api/species/')
     .then(response => {
-      const list = response.data.results;
-      res.render('index', { list });
+      const species = response.data.results;
+      res.render('index', { list: species });
     });
 });
 
